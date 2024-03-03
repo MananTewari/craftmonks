@@ -2,8 +2,8 @@ import { FaUserAlt } from "react-icons/fa";
 import { PiSmileyWinkFill } from "react-icons/pi";
 import { IoBag } from "react-icons/io5";
 import { Link } from "react-router-dom";
-function Header() {
 
+function Header() {
   return (
     <div>
       <header>

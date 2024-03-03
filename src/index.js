@@ -1,10 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './routes/App';
+import { Provider } from 'react-redux';
+
 import Home from './routes/Home';
 import {  RouterProvider } from 'react-router-dom';
 import { createBrowserRouter } from 'react-router-dom';
 import ShoppingBag from './routes/ShoppingBag';
+import myntraStore from './store/indexmain';
+
+
+
+
 const router = createBrowserRouter([
   {
       path: "/", element: <App/>,
@@ -16,8 +23,11 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  
   <React.StrictMode>
+    <Provider store={myntraStore}>
     <RouterProvider router={router}/>
+    </Provider>
   </React.StrictMode>
 );
 
