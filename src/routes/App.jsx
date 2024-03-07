@@ -1,30 +1,24 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 import { Routes, Route } from "react-router-dom";
-import "../index.css"
+import "../index.css";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import { Outlet } from "react-router-dom";
-
+import FetchItems from "../Components/fetchItems";
+import { useSelector } from "react-redux";
+import LoadingSpinner from "../Components/LoadingSpinner";
 
 function App() {
- 
+   const fetchStatus=useSelector((store)=> store.fetchStatus);
+   console.log(fetchStatus);
   return (
     <>
-      {/* <div classNameName="App">
-      <Navbar />
-      <Routes>
-        <Route path="/home" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/cart" element={<Cart />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        </Routes>
-    </div> */}
-      <div>
-        <Header />
-       <Outlet/>
-        <Footer />
-      </div>
+      <Header />
+      <FetchItems />
+      {fetchStatus.currentlyFetching?<LoadingSpinner/>:<Outlet/> }
+
+      <Footer />
     </>
   );
 }
