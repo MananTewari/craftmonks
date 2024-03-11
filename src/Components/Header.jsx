@@ -2,8 +2,15 @@ import { FaUserAlt } from "react-icons/fa";
 import { PiSmileyWinkFill } from "react-icons/pi";
 import { IoBag } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Header() {
+
+
+const bag=useSelector(store =>store.bag);
+console.log(bag);
+
+
   return (
     <div>
       <header>
@@ -47,7 +54,7 @@ function Header() {
           <Link className="action_container" to="/ShoppingBag">
             <IoBag />
             <span className="action_name">Bag</span>
-            <span className="bag-item-count">0</span>
+            <span className="bag-item-count">{bag.length}</span>
             </Link>
           </div>
           </header>

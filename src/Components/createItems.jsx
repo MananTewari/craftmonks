@@ -1,4 +1,15 @@
+import { useDispatch, useSelector } from "react-redux";
+import { bagSliceActions } from "../store/bagSlice";
+
 function ItemsCreater({ item }) {
+  
+  const dispatch=useDispatch();
+  
+  const handleBagSubmit=()=>{
+dispatch(bagSliceActions.addToBag(item.id));
+  }
+  
+  
   return (
     <div>
       <div className="item-container">
@@ -13,7 +24,7 @@ function ItemsCreater({ item }) {
           <span className="original-price">Rs {item.original_price}</span>
           <span className="discount">({item.discount_percentage}% OFF)</span>
           </div>
-          <button className="btn-place-order" onClick={()=> console.log("Place order clicked")}> 
+          <button className="btn-place-order" onClick={handleBagSubmit}> 
        
        Buy Now
       </button>

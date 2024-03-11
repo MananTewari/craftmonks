@@ -1,27 +1,16 @@
-function BagItems() {
+import "../index.css";
+
+
+function BagItems({item}) {
+  console.log(item);
   const summary = {
-  totalItem: 12,
+    totalItem: 12,
     totalDiscount: 999,
     totalMRP: 1399,
     finalPayment: 2399,
   };
 
-  const item = {
-    
-        id: "001",
-        image: "images/1.jpg",
-        company: "Carlton London",
-        item_name: "Rhodium-Plated CZ Floral Studs",
-        original_price: 1045,
-        current_price: 606,
-        discount_percentage: 42,
-        return_period: 14,
-        delivery_date: "10 Oct 2023",
-        rating: {
-          stars: 4.5,
-          count: 1400,
-        },
-  };
+
   return (
     <>
       <div class="bag-item-container">
@@ -48,7 +37,10 @@ function BagItems() {
           </div>
         </div>
 
-        <div class="remove-from-cart" onClick={()=>console.log("remove item clicked")}>
+        <div
+          class="remove-from-cart"
+          onClick={() => console.log("remove item clicked")}
+        >
           X
         </div>
       </div>
@@ -77,9 +69,12 @@ function BagItems() {
           <span className="price-item-value">₹{summary.finalPayment}</span>
         </div>
       </div>
-      <button className="btn-place-order" onClick={()=> console.log("Place order clicked")}> 
+      <button
+        className="btn-place-order"
+        onClick={() => console.log("Place order clicked")}
+      >
         <div className="css-xjhrni">PLACE ORDER</div>
-      </button>
+      </button> }
     </>
   );
 }

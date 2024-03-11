@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 function Home() {
     const items = useSelector((store) => store.items); // Selecting 'items' from the store
 console.log(items);
-  
+
 const itemsArray = Object.values(items);
 
 return (
