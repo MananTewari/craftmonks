@@ -2,43 +2,50 @@ import "../index.css";
 
 
 function BagItems({item}) {
-  console.log(item);
+  
   const summary = {
-    totalItem: 12,
+    totalItem: 2,
     totalDiscount: 999,
-    totalMRP: 1399,
-    finalPayment: 2399,
+    totalMRP: 1599,
+    finalPayment:999
   };
-
-
+  console.log(item);
+const summed={
+  MRP:item.current_price,
+  Discount:item.current_price-summary.totalDiscount,
+}
+console.log(summed);
   return (
     <>
-      <div class="bag-item-container">
-        <div class="item-left-part">
-          <img class="bag-item-img" src={item.image} />
+<div className="main_container">
+
+
+      <div className="bag-item-container">
+        <div className="item-left-part">
+          <img className="bag-item-img" src={item.image} />
         </div>
-        <div class="item-right-part">
-          <div class="company">{item.company}</div>
-          <div class="item-name">{item.item_name}</div>
-          <div class="price-container">
-            <span class="current-price">Rs {item.current_price}</span>
-            <span class="original-price">Rs {item.original_price}</span>
-            <span class="discount-percentage">
+        <div className="item-right-part">
+          <div className="company">{item.company}</div>
+          <div className="item-name">{item.item_name}</div>
+          <div className="price-container">
+            <span className="current-price">Rs {item.current_price}</span>
+            <span className="original-price">Rs {item.original_price}</span>
+            <span className="discount-percentage">
               ({item.discount_percentage}% OFF)
             </span>
           </div>
-          <div class="return-period">
-            <span class="return-period-days">{item.return_period} days</span>{" "}
+          <div className="return-period">
+            <span className="return-period-days">{item.return_period} days</span>{" "}
             return available
           </div>
-          <div class="delivery-details">
+          <div className="delivery-details">
             Delivery by
-            <span class="delivery-details-days">{item.delivery_date}</span>
+            <span className="delivery-details-days">{item.delivery_date}</span>
           </div>
         </div>
 
         <div
-          class="remove-from-cart"
+          className="remove-from-cart"
           onClick={() => console.log("remove item clicked")}
         >
           X
@@ -51,12 +58,12 @@ function BagItems({item}) {
         </div>
         <div className="price-item">
           <span className="price-item-tag">Total MRP</span>
-          <span className="price-item-value">₹{summary.totalMRP}</span>
+          <span className="price-item-value">₹{summed.totalMRP}</span>
         </div>
         <div className="price-item">
           <span className="price-item-tag">Discount on MRP</span>
           <span className="price-item-value priceDetail-base-discount">
-            -₹{summary.totalDiscount}
+            -₹{summed.Discount}
           </span>
         </div>
         <div className="price-item">
@@ -66,7 +73,7 @@ function BagItems({item}) {
         <hr />
         <div className="price-footer">
           <span className="price-item-tag">Total Amount</span>
-          <span className="price-item-value">₹{summary.finalPayment}</span>
+          <span className="price-item-value">₹{summed.finalPayment}</span>
         </div>
       </div>
       <button
@@ -74,7 +81,9 @@ function BagItems({item}) {
         onClick={() => console.log("Place order clicked")}
       >
         <div className="css-xjhrni">PLACE ORDER</div>
-      </button> }
+      </button>
+
+      </div>
     </>
   );
 }

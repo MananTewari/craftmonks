@@ -10,7 +10,6 @@ function Header() {
 const bag=useSelector(store =>store.bag);
 console.log(bag);
 
-
   return (
     <div>
       <header>

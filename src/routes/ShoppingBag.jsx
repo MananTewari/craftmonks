@@ -12,12 +12,12 @@ function ShoppingBag() {
   });
 console.log(items);
 
+
   return (
     <>
       <div className="bag-page">
         <div className="bag-item-container">
-          {finalItems.map((item=>( <BagItems item={item}/>)))}
-         
+          {finalItems.map((item=>( <BagItems item={item}/>)))}        
         </div>
       </div>
     </>
