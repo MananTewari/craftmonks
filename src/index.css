@@ -300,7 +300,7 @@ a.action_container:link {
 .main_container{
     display:flex;
     justify-content:space-around;
-    width:40%;
+    width:100%;
     align-items:center;
 }
 
