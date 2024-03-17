@@ -1,10 +1,20 @@
+import { useDispatch } from "react-redux";
 import "../index.css";
+import { bagSliceActions } from "../store/bagSlice";
 
 
 function BagItems({item}) {
+  const dispatch=useDispatch();
+
+  function handleItemRemove() {
+   dispatch(bagSliceActions.deleteFromBag(item.id));
+  console.log("removed clicked")
+  }
   
+ 
+
   const summary = {
-    totalItem: 2,
+    totalItem: 1,
     totalDiscount: 999,
     totalMRP: 1599,
     finalPayment:999
@@ -46,7 +56,7 @@ console.log(summed);
 
         <div
           className="remove-from-cart"
-          onClick={() => console.log("remove item clicked")}
+          onClick={handleItemRemove}
         >
           X
         </div>

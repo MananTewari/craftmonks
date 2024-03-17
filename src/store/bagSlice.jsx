@@ -9,9 +9,11 @@ const bagSlice = createSlice({
       state.push(action.payload);
     },
     deleteFromBag: (state, action) => {
-      state.filter((itemId) => itemId !== action.payload);
+      return state.filter(itemId => itemId !== action.payload)
+      // Array.splice(itemId, 1);
+      // console.log(itemId);
     },
-  },
+  }
 });
 export const bagSliceActions = bagSlice.actions;
 export default bagSlice;
