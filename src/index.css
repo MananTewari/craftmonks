@@ -12,7 +12,9 @@ header {
     align-items: center;
     border-bottom: 1px solid #b6b1b1;
 }
-
+.emptycart{
+    text-align:center;
+}
 .myntra_home {
     height: 45px;
 }
