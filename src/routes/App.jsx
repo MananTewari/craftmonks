@@ -8,6 +8,7 @@ import { Outlet } from "react-router-dom";
 import FetchItems from "../Components/fetchItems";
 import { useSelector } from "react-redux";
 import LoadingSpinner from "../Components/LoadingSpinner";
+import Banners from "../Components/banners";
 
 function App() {
    const fetchStatus=useSelector((store)=> store.fetchStatus);

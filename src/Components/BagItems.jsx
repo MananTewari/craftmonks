@@ -11,7 +11,6 @@ function BagItems({item}) {
   console.log("removed clicked")
   }
   
- 
 
   const summary = {
     totalItem: 1,

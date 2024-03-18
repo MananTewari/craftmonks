@@ -12,6 +12,20 @@ header {
     align-items: center;
     border-bottom: 1px solid #b6b1b1;
 }
+.banner{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:5%;
+    padding-bottom:1%;
+}
+.bannerImages{
+    width:100%;
+    border-radius:20px;   
+    transition:0.3s ease;
+
+}
+
 .emptycart{
     text-align:center;
 }
