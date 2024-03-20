@@ -6,7 +6,9 @@ import { useSelector } from "react-redux";
 
 function Header() {
 
-
+function checkClick(){
+  console.log("clicked");
+}
 const bag=useSelector(store =>store.bag);
 console.log(bag);
 
@@ -50,7 +52,7 @@ console.log(bag);
             <span className="action_name">Wishlist</span>
           </div>
 
-          <Link className="action_container" to="/ShoppingBag">
+          <Link className="action_container" to="/ShoppingBag" onClick={checkClick}>
             <IoBag />
             <span className="action_name">Bag</span>
             <span className="bag-item-count">{bag.length}</span>

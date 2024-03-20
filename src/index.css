@@ -16,11 +16,12 @@ header {
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:5%;
-    padding-bottom:1%;
+    padding:2%;
+    
 }
 .bannerImages{
     width:100%;
+    padding:5%; 
     border-radius:20px;   
     transition:0.3s ease;
 
@@ -33,7 +34,7 @@ header {
     height: 45px;
 }
 
-.logo_container {
+.container {
     margin-left: 4%;
 }
 
@@ -133,11 +134,11 @@ header {
 
 .category-items,
 .items-container {
-    width: 80%;
+    width: 100%;
     margin: 50px 10%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .sale_item {

@@ -5,30 +5,26 @@ import { bagSliceActions } from "../store/bagSlice";
 
 function BagItems({item}) {
   const dispatch=useDispatch();
-
   function handleItemRemove() {
    dispatch(bagSliceActions.deleteFromBag(item.id));
   console.log("removed clicked")
   }
-  
-
   const summary = {
     totalItem: 1,
-    totalDiscount: 999,
+    totalDiscount: (item.discount_percentage/100)*(item.original_price),
     totalMRP: 1599,
-    finalPayment:999
   };
   console.log(item);
 const summed={
   MRP:item.current_price,
-  Discount:item.current_price-summary.totalDiscount,
+  Discount:(item.current_price-summary.totalDiscount).toFixed(2),
+  finalPayment:item.original_price - summary.totalDiscount,
 }
 console.log(summed);
+console.log(summed.Discount);
   return (
     <>
 <div className="main_container">
-
-
       <div className="bag-item-container">
         <div className="item-left-part">
           <img className="bag-item-img" src={item.image} />
