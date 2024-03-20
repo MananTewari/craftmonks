@@ -26,7 +26,11 @@ header {
     transition:0.3s ease;
 
 }
-
+.bag-page{
+    display:flex;
+    justify-content:space-around;
+    align-items:flex-start;
+}
 .emptycart{
     text-align:center;
 }
