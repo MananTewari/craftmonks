@@ -42,11 +42,13 @@ console.log(bag);
           />
         </div>
         <div className="action_bar">
+          <Link className="action_container" to="/Login">
           <div className="action_container">
             <FaUserAlt />
-            <span className="action_name">Profile</span>
+            <span className="action_name" >Profile</span>
           </div>
-
+          </Link>
+          
           <div className="action_container">
             <PiSmileyWinkFill />
             <span className="action_name">Wishlist</span>

@@ -18,6 +18,11 @@ const BagSummary = () => {
     totalDiscount += bagItem.original_price - bagItem.current_price;
   });
 
+  function placeOrder(){
+    console.log("place order clicked")
+  }
+
+  
   let finalPayment = totalMRP - totalDiscount + CONVENIENCE_FEES;
 
   return (
@@ -44,10 +49,14 @@ const BagSummary = () => {
           <span className="price-item-value">₹{finalPayment}</span>
         </div>
       </div>
-      <button className="btn-place-order">
-        <div className="css-xjhrni">PLACE ORDER</div>
+      <button className="btn-add-bag">
+        <div className="css-xjhrni" onClick={placeOrder}>
+          PLACE ORDER
+          </div>
       </button>
-    </div>
+     
+      </div>
+
   );
 };
 

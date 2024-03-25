@@ -8,7 +8,7 @@ import {  RouterProvider } from 'react-router-dom';
 import { createBrowserRouter } from 'react-router-dom';
 import ShoppingBag from './routes/ShoppingBag';
 import myntraStore from './store/indexmain';
-
+import Login from "./Components/Login";
 
 
 
@@ -17,7 +17,9 @@ const router = createBrowserRouter([
       path: "/", element: <App/>,
       children:
           [{ path: "/", element: <Home/>},
-          { path: "/ShoppingBag", element: <ShoppingBag/>},]
+          { path: "/ShoppingBag", element: <ShoppingBag/>},
+          {path:"/Login", element:<Login/>}
+        ]
   },
 ]);
 
